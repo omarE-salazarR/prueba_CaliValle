@@ -1,22 +1,25 @@
 <?php
  require '../Modelo/conexionBasesDatos.php';
     $objConexion = Conectarse();
-    $sql = "select * from areas";
+    $sql = "select * from empleados where id=$id";
     $resultado = $objConexion->query($sql);
     ?>
 
+    
+
 <div style="padding: 60px;">
   <form  method="post" action="../Controlador/AgregarEmpleado.php">
+    <?php while ($res = $resultado->fetch_object()) { ?>
     <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Nombre Completo</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="name" name="name">
+      <input type="text" class="form-control" id="name" name="name" value="<?php echo $res->nombre?>">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Correo Electronico</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="correo" name="correo">
+      <input type="email" class="form-control" id="correo" name="correo"  value="<?php echo $res->email?>">
     </div>
   </div>
   <fieldset class="form-group">
@@ -44,9 +47,9 @@
     <label for="" class="col-sm-2 col-form-label">Area</label>
     <div class="col-sm-10">
   <select name="area" class="form-control form-control-lg"  id="area">
-    <?php while ($res = $resultado->fetch_object()) { ?>
-  <option value="<?php echo $res->id?>"><?php echo $res->nombre?></option>
-   <?php } ?>
+    
+  <option value=""><?php echo $res->area_id?></option>
+   
 </select>
 </div>
 </div>
@@ -55,7 +58,7 @@
    <label for="" class="col-sm-2 col-form-label">Descripción</label>
     <div class="col-sm-10">
     <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea name="descripcion" id="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea name="descripcion" id="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $res->descripcion?></textarea>
     <div class="form-check">
   <input class="form-check-input" type="checkbox" name="boletin" value="si" id="defaultCheck1">
   <label  class="form-check-label" for="defaultCheck1">
@@ -97,6 +100,6 @@
 <button type="submit" class="btn btn-primary">Guardar</button>
 </div>
 </div>
-
+<?php } ?>
 </form>
 </div>
