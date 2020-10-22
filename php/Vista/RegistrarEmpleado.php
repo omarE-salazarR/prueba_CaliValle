@@ -99,4 +99,25 @@
 </div>
 
 </form>
+
+<?php
+if ($msj == 1){
+ ?>
+
+ <div class="alert alert-primary" role="alert">
+  Agregado Correctamente
+</div>
+
+<?php
+
+}
+if ($msj == 2){
+  ?>  
+  <div class="alert alert-danger" role="alert">
+  Error al agregar el Empleado!
+</div>
+
+<?php
+}
+?>
 </div>

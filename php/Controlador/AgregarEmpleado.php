@@ -8,7 +8,7 @@ $sql="insert into empleados (nombre, email, sexo, area_id, boletin, descripcion)
 $resultado=$objConexion->query($sql);
 
 if($resultado){
-    echo "bien";;
+     header('location:../Vista/index2.php?pag=RegistrarEmpleado&msj=1');
 }else{
-     echo "error";;
+      header('location:../Vista/index2.php?pag=RegistrarEmpleado&msj=2');
 }
