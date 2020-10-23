@@ -1,7 +1,7 @@
 <?php
  require '../Modelo/conexionBasesDatos.php';
     $objConexion = Conectarse();
-    $sql ="SELECT empleados.id, empleados.nombre, empleados.email, empleados.sexo, empleados.area_id, empleados.boletin, empleados.descripcion, areas.id, areas.nombre as name from empleados, areas where areas.id=empleados.area_id";
+    $sql ="SELECT empleados.id as iden, empleados.nombre, empleados.email, empleados.sexo, empleados.area_id, empleados.boletin, empleados.descripcion, areas.id, areas.nombre as name from empleados, areas where areas.id=empleados.area_id";
     $resultado = $objConexion->query($sql);
     ?>
 
@@ -30,7 +30,7 @@
 
       <td><?php echo $res->name?></td>
       <td><?php echo $res->boletin?></td>
-      <td><a href="index2.php?pag=ActualizarEmpleado&id=<?php echo $res->id?>"><i class="fas fa-edit"></i></a></td>
+      <td><a href="index2.php?pag=ActualizarEmpleado&id=<?php echo $res->iden?>"><i class="fas fa-edit"></i></a></td>
       <td><a href="../Controlador/Eliminar.php?id=<?php echo $res->id?>"><i class="fas fa-trash-alt"></i></a></td>
     </tr>
     <?php } ?>

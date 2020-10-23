@@ -1,7 +1,7 @@
 <?php
  require '../Modelo/conexionBasesDatos.php';
     $objConexion = Conectarse();
-    $sql = "select * from empleados where id=$id";
+    $sql = "SELECT empleados.id, empleados.nombre, empleados.email, empleados.sexo, empleados.area_id, empleados.boletin, empleados.descripcion, areas.nombre as name from empleados, areas where (areas.id=empleados.area_id) and (empleados.id=$id)";
     $resultado = $objConexion->query($sql);
     ?>
 <div style="padding: 60px;">
@@ -45,7 +45,7 @@
     <label for="" class="col-sm-2 col-form-label">Area</label>
     <div class="col-sm-10">
   <select name="area" class="form-control form-control-lg"  id="area">  
-  <option value=""><?php echo $res->area_id?></option>
+  <option value="<?php echo $res->area_id?>"><?php echo $res->name?></option>
 </select>
 </div>
 </div>
@@ -53,7 +53,7 @@
 <div class="form-group row">
    <label for="" class="col-sm-2 col-form-label">Descripción</label>
     <div class="col-sm-10">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <label for="exampleFormControlTextarea1"></label>
     <textarea name="descripcion" id="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $res->descripcion?></textarea>
     <div class="form-check">
   <input class="form-check-input" type="checkbox" name="boletin" value="si" id="defaultCheck1">
