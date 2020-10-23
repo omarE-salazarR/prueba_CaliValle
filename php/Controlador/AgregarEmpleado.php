@@ -8,7 +8,7 @@ $sql="insert into empleados (nombre, email, sexo, area_id, boletin, descripcion)
 $resultado=$objConexion->query($sql);
 
 if($resultado){
-     header('location:../Vista/index2.php?pag=RegistrarEmpleado&msj=1');
+     header('location:../Vista/index2.php?pag=ListarEmpleados&msj=5');
 }else{
-      header('location:../Vista/index2.php?pag=RegistrarEmpleado&msj=2');
+      header('location:../Vista/index2.php?pag=ListarEmpleados&msj=6');
 }

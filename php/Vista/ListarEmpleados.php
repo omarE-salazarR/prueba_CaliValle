@@ -1,7 +1,7 @@
 <?php
  require '../Modelo/conexionBasesDatos.php';
     $objConexion = Conectarse();
-    $sql = "select * from empleados";
+    $sql ="SELECT empleados.id, empleados.nombre, empleados.email, empleados.sexo, empleados.area_id, empleados.boletin, empleados.descripcion, areas.id, areas.nombre as name from empleados, areas where areas.id=empleados.area_id";
     $resultado = $objConexion->query($sql);
     ?>
 
@@ -26,7 +26,9 @@
       <td><?php echo $res->nombre?></td>
       <td><?php echo $res->email?></td>
       <td><?php echo $res->sexo?></td>
-      <td><?php echo $res->area_id?></td>
+
+
+      <td><?php echo $res->name?></td>
       <td><?php echo $res->boletin?></td>
       <td><a href="index2.php?pag=ActualizarEmpleado&id=<?php echo $res->id?>"><i class="fas fa-edit"></i></a></td>
       <td><a href="../Controlador/Eliminar.php?id=<?php echo $res->id?>"><i class="fas fa-trash-alt"></i></a></td>
@@ -77,5 +79,24 @@ if ($msj == 4){
 <?php
 
 }
+if ($msj == 5){
+ ?>
+
+ <div class="alert alert-primary" role="alert">
+  Agregado Correctamente
+</div>
+
+<?php
+
+}
+if ($msj == 6){
+  ?>  
+  <div class="alert alert-danger" role="alert">
+  Error al agregar el Empleado!
+</div>
+
+<?php
+}
 ?>
+
 </div>
