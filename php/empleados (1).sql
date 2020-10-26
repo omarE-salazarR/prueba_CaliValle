@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-10-2020 a las 02:02:49
+-- Tiempo de generación: 26-10-2020 a las 18:46:58
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.8
 
@@ -33,6 +33,16 @@ CREATE TABLE `areas` (
   `nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `areas`
+--
+
+INSERT INTO `areas` (`id`, `nombre`) VALUES
+(1, 'admin'),
+(2, 'contable'),
+(5, 'admin'),
+(6, 'contable');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +59,13 @@ CREATE TABLE `empleados` (
   `descripcion` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`id`, `nombre`, `email`, `sexo`, `area_id`, `boletin`, `descripcion`) VALUES
+(23, '', '', '', 0, '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -56,9 +73,16 @@ CREATE TABLE `empleados` (
 --
 
 CREATE TABLE `empleado_rol` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL
+  `empleado_id` int(11) NOT NULL,
+  `rol_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empleado_rol`
+--
+
+INSERT INTO `empleado_rol` (`empleado_id`, `rol_id`) VALUES
+(26, 'Profesional_de_Proyectos');
 
 -- --------------------------------------------------------
 
@@ -70,6 +94,15 @@ CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id`, `nombre`) VALUES
+(1, 'Profesional de proyectos - Desarrollador'),
+(2, 'Gerente Estratégico'),
+(3, 'Auxiliar Administrativo');
 
 --
 -- Índices para tablas volcadas
@@ -101,13 +134,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `areas`
 --
 ALTER TABLE `areas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
