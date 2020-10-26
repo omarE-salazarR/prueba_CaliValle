@@ -6,6 +6,7 @@
     ?>
 <div style="padding: 60px;">
   <form  method="post" action="../Controlador/EditarEmpleado.php">
+    <h1>Editar Empleado</h1>
     <?php while ($res = $resultado->fetch_object()) { ?>
     <div class="form-group row">
       <input hidden="yes" type="text" name="id" id="id" value="<?php echo $res->id?>">
@@ -15,24 +16,24 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Correo Electronico</label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Correo Electrónico*</label>
     <div class="col-sm-10">
       <input type="email" class="form-control" id="correo" name="correo"  value="<?php echo $res->email?>">
     </div>
   </div>
-  <fieldset class="form-group" required="true">
+<fieldset required="yes" class="form-group">
     <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
+      <legend class="col-form-label col-sm-2 pt-0">Sexo*</legend>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="sexo" id="sexo" value="Masculino">
-          <label class="form-check-label" for="gridRadios1">
+          <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="Masculino" checked="yes">
+          <label class="form-check-label" for="sexoM">
             Masculino
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="sexo" id="sexo" value="Femenino">
-          <label class="form-check-label" for="gridRadios2" >
+          <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="Femenino">
+          <label class="form-check-label" for="sexoF">
             Femenino
           </label>
         </div>
@@ -42,7 +43,7 @@
   </fieldset>
   
 <div class="form-group row">
-    <label for="" class="col-sm-2 col-form-label">Area</label>
+    <label for="" class="col-sm-2 col-form-label">Área*</label>
     <div class="col-sm-10">
   <select name="area" class="form-control form-control-lg"  id="area">  
   <option value="<?php echo $res->area_id?>"><?php echo $res->name?></option>
@@ -56,9 +57,9 @@
     <label for="exampleFormControlTextarea1"></label>
     <textarea name="descripcion" id="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $res->descripcion?></textarea>
     <div class="form-check">
-  <input class="form-check-input" type="checkbox" name="boletin" value="si" id="defaultCheck1">
+  <input class="form-check-input" type="checkbox" name="boletin" value="si" id="defaultCheck1" checked="yes">
   <label  class="form-check-label" for="defaultCheck1">
-    Deseo Recibir el boletin informativo
+    Deseo Recibir el boletín informativo
   </label>
 </div>
   </div>
@@ -69,20 +70,20 @@
     <div class="col-sm-10">
 <fieldset class="form-group">
    <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  <label class="form-check-label" for="defaultCheck1">
+  <input class="form-check-input" type="checkbox" value="Profesional_de_Proyectos" name="Rol1" id="v1" checked="yes">
+  <label class="form-check-label" for="v1">
     Profesional de proyectos - Desarrollador
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-  <label class="form-check-label" for="defaultCheck1">
+  <input class="form-check-input" type="checkbox" value="Gerente_Estrategico" name="Rol2" id="v2" >
+  <label class="form-check-label" for="v2">
     Gerente Estrategico
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" >
-  <label class="form-check-label" for="defaultCheck1">
+  <input class="form-check-input" type="checkbox" value="Auxiliar_Administrativo" name="Rol3" id="v3" >
+  <label class="form-check-label" for="v3">
     Auxiliar Administrativo
   </label>
 </div>

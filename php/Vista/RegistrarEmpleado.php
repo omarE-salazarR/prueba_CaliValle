@@ -7,7 +7,7 @@
 
 <div style="padding: 60px;">
   <form  method="post" action="../Controlador/AgregarEmpleado.php">
-    <h1>Crar Empleado</h1>
+    <h1>Crear Empleado</h1>
     <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Nombre Completo*</label>
     <div class="col-sm-10">
