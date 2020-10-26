@@ -31,11 +31,11 @@ if ($resultadoD) {
 }
 
 }else{
-	echo "error";
+	header('location:../Vista/index2.php?pag=ListarEmpleados&msj=6');
 }
 
 }else{
- echo " error";
+ header('location:../Vista/index2.php?pag=ListarEmpleados&msj=6');
 }
 
 

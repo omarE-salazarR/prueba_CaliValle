@@ -79,7 +79,7 @@
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="Gerente_Estrategico" name="Rol2" id="v2" >
   <label class="form-check-label" for="v2">
-    Gerente Estrategico
+    Gerente Estratégico
   </label>
 </div>
 <div class="form-check">
