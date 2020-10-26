@@ -6,7 +6,7 @@
     ?>
 
 <div style="padding: 60px;">
-	
+	<h1>Lista de Empleados</h1>
 	<a  href="index2.php?pag=RegistrarEmpleado"  class="btn btn-primary">Crear<i class="fas fa-user-plus"></i></a>
 	<table class="table">
   <thead>
@@ -26,12 +26,10 @@
       <td><?php echo $res->nombre?></td>
       <td><?php echo $res->email?></td>
       <td><?php echo $res->sexo?></td>
-
-
       <td><?php echo $res->name?></td>
       <td><?php echo $res->boletin?></td>
-      <td><a href="index2.php?pag=ActualizarEmpleado&id=<?php echo $res->iden?>"><i class="fas fa-edit"></i></a></td>
-      <td><a href="../Controlador/Eliminar.php?id=<?php echo $res->id?>"><i class="fas fa-trash-alt"></i></a></td>
+      <td><a href="index2.php?pag=ActualizarEmpleado&id=<?php echo $res->iden ?>"><i class="fas fa-edit"></i></a></td>
+      <td><a href="../Controlador/Eliminar.php?id=<?php echo $res->iden ?>"><i class="fas fa-trash-alt"></i></a></td>
     </tr>
     <?php } ?>
   </tbody>
