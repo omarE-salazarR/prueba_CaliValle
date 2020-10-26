@@ -5,6 +5,9 @@
     $resultado = $objConexion->query($sql);
     ?>
 <div style="padding: 60px;">
+   <div class="alert alert-primary" role="alert">
+  Los campos con asteriscos son obligatorios
+</div>
   <form  method="post" action="../Controlador/EditarEmpleado.php">
     <h1>Editar Empleado</h1>
     <?php while ($res = $resultado->fetch_object()) { ?>

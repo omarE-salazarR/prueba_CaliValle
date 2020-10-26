@@ -6,6 +6,9 @@
     ?>
 
 <div style="padding: 60px;">
+  <div class="alert alert-primary" role="alert">
+  Los campos con asteriscos son obligatorios
+</div>
   <form  method="post" action="../Controlador/AgregarEmpleado.php">
     <h1>Crear Empleado</h1>
     <div class="form-group row">
